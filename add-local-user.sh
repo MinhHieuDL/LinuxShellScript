@@ -34,7 +34,7 @@ then
 fi
 
 # Set the password
-echo "${INITIAL_PASSWORD}" | passwd --stdin ${USER_NAME}
+echo -e "${INITIAL_PASSWORD}\n${INITIAL_PASSWORD}" | passwd ${USER_NAME}
 if [[ "${?}" -ne 0 ]]
 then 
  echo 'The password for the account coud not be set'
