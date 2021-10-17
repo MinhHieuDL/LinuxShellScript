@@ -22,13 +22,9 @@ fi
 # Uses the first argument provided on the command line as the username
 USER_NAME="${1}"
 
-# Uses any remaining arguments on the command line as the comment for the account
+# Uses the remaining arguments on the command line as the comment for the account
 shift
-COMMENT=""
-if [[ "${#}" -gt 0 ]]
-then
-    COMMENT="${1}"
-fi
+COMMENT="${@}"
 
 # Automatically generate the password
 PASSWORD="$(date +%s)"
